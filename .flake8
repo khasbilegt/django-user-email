@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 120
+max-complexity = 10
+extend-select = C4
+ignore = E501
+exclude = .git,.venv,pyproject.toml,.pre-commit-config.yaml,README.md,poetry.lock,migrations
