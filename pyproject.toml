@@ -1,0 +1,86 @@
+[tool.black]
+line-length = 120
+target_version = ['py38']
+include = '\.py$'
+extend-exclude = '''
+/(
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+skip_glob = "*/migrations/*.py"
+
+[tool.coverage.run]
+branch = true
+omit = [
+  "*/.venv/*",
+  "runtests.py",
+  "makemigrations.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "def __str__"
+]
+omit = [
+  "*/.venv/*",
+  "runtests.py",
+  "makemigrations.py"
+]
+show_missing = true
+skip_covered = true
+skip_empty = true
+precision = 2
+
+[tool.poetry]
+name = "django-user-email"
+version = "0.2.2"
+description = "Custom, simple Django User model with email as username"
+authors = ["Khasbilegt.TS <khasbilegt.ts@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/khasbilegt/django-user-email"
+repository = "https://github.com/khasbilegt/django-user-email"
+keywords = ["django", "model", "user", "email", "username", "custom"]
+readme = "README.md"
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    
+]
+packages = [
+    { include = "user_email"},
+]
+include = [
+    "LICENSE",
+    "README.md"
+]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+Django = ">= 2.2, < 4"
+
+[tool.poetry.dev-dependencies]
+factory-boy = "^3.2.0"
+black = "^21.9b0"
+flake8 = "^3.9.2"
+isort = "^5.9.3"
+coverage = {extras = ["toml"], version = "^5.5"}
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
