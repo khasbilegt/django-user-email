@@ -13,17 +13,21 @@ profile = "black"
 skip_glob = "*/migrations/*.py"
 
 [tool.poetry]
-name = "account"
+name = "django-user-email"
 version = "0.1.1"
-description = "Custom, simple Django User model with only email and name fields"
+description = "Custom, simple Django User model with email as username"
 authors = ["Khasbilegt.TS <khasbilegt.ts@gmail.com>"]
 license = "MIT"
-homepage = "https://github.com/khasbilegt/django-email-user"
-repository = "https://github.com/khasbilegt/django-email-user"
+homepage = "https://github.com/khasbilegt/django-user-email"
+repository = "https://github.com/khasbilegt/django-user-email"
+keywords = ["django", "model", "user", "email", "username", "custom"]
+packages = [
+    { include = "user_email"},
+]
 include = [
     "LICENSE",
+    "README.md"
 ]
-
 
 [tool.poetry.dependencies]
 python = "^3.8"

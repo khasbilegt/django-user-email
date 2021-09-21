@@ -1,5 +1,5 @@
 <h1 align="center">
-  django-account
+  django-user-email
 </h1>
 
 <p align="center">
@@ -8,14 +8,14 @@
   <a href="#license">License</a>
 </p>
 
-<p align="center">Custom, simple Django User model with only email and name fields</p>
+<p align="center">Custom, simple Django User model with email as username</p>
 
 ## Installation
 
 1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install numiner.
 
 ```bash
-$ pip install account
+$ pip install django-user-email
 ```
 
 2. Register the app to your settings
@@ -23,14 +23,14 @@ $ pip install account
 ```python
 INSTALLED_APPS = (
     ...
-    'account',
+    'user_email',
 )
 ```
 
 3. Since it's a custom User model Django needs to know the path of the model
 
 ```bash
-AUTH_USER_MODEL = 'account.User'
+AUTH_USER_MODEL = 'user_email.User'
 ```
 
 ## Contributing
