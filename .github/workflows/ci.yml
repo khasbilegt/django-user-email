@@ -50,9 +50,7 @@ jobs:
           virtualenvs-in-project: true
 
       - name: Install dependencies
-        run: |
-          poetry install
-          poetry shell
+        run: poetry install
 
       - name: Install django ${{ matrix.django-version }}
         run: poetry add "Django==${{ matrix.django-version }}"
