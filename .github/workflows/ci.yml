@@ -57,4 +57,5 @@ jobs:
 
       - name: Run tests
         run: |
+          poetry run python makemigrations.py
           poetry run python runtests.py
