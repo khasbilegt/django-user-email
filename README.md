@@ -9,6 +9,10 @@
   <a href="https://pypi.org/project/django-user-email/">
     <img src="https://img.shields.io/pypi/v/django-user-email?style=for-the-badge" alt="pypi link">
   </a>
+  <a href="https://codecov.io/github/khasbilegt/django-user-email">
+    <img src="https://img.shields.io/codecov/c/github/khasbilegt/django-user-email?logo=codecov&style=for-the-badge" alt="codecov">
+  </a>
+  <br>
   <a>
     <img src="https://img.shields.io/pypi/pyversions/django-user-email?logo=python&style=for-the-badge" alt="supported python versions">
   </a>
