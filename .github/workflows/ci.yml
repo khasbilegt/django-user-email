@@ -50,13 +50,9 @@ jobs:
           virtualenvs-in-project: true
 
       - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-
-      - name: Install library
         run: |
+          poetry install
           poetry shell
-          poetry install --no-interaction
 
       - name: Install django ${{ matrix.django-version }}
         run: poetry add "Django==${{ matrix.django-version }}"
