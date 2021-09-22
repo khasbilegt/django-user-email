@@ -37,7 +37,7 @@ precision = 2
 
 [tool.poetry]
 name = "django-user-email"
-version = "0.2.1"
+version = "0.2.2"
 description = "Custom, simple Django User model with email as username"
 authors = ["Khasbilegt.TS <khasbilegt.ts@gmail.com>"]
 license = "MIT"
