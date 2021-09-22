@@ -20,13 +20,6 @@ class UserManagerTestCase(TransactionTestCase):
                 for field in self.fields:
                     self.assertEqual(getattr(user, field), bool(case))
 
-    def test_create_user_without_email_raises_exception(self):
-        self.assertRaises(
-            ValueError,
-            lambda _: User.objects.create_user("Bob", "", "password", **{field: True for field in self.fields}),
-            "Users must have an email address.",
-        )
-
     def test_create_superuser(self):
         for case in (None, True):
             with self.subTest(case=case):

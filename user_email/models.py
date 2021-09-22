@@ -13,13 +13,6 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, name, email, password, **extra_fields):
-        """
-        Create and save a user with the given username, email, and password.
-        """
-
-        if not email:
-            raise ValueError("Users must have an email address.")
-
         user = self.model(email=self.normalize_email(email), name=name, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
@@ -48,7 +41,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(blank=True, null=True, unique=True)
     name = models.CharField(max_length=60)
     is_active = models.BooleanField(default=False, db_index=True)
     is_staff = models.BooleanField(default=False)

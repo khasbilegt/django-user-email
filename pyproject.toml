@@ -14,7 +14,7 @@ skip_glob = "*/migrations/*.py"
 
 [tool.poetry]
 name = "django-user-email"
-version = "0.1.2"
+version = "0.2.0"
 description = "Custom, simple Django User model with email as username"
 authors = ["Khasbilegt.TS <khasbilegt.ts@gmail.com>"]
 license = "MIT"
