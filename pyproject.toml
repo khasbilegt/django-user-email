@@ -12,6 +12,29 @@ extend-exclude = '''
 profile = "black"
 skip_glob = "*/migrations/*.py"
 
+[tool.coverage.run]
+branch = true
+omit = [
+  "*/.venv/*",
+  "runtests.py",
+  "makemigrations.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "def __str__"
+]
+omit = [
+  "*/.venv/*",
+  "runtests.py",
+  "makemigrations.py"
+]
+show_missing = true
+skip_covered = true
+skip_empty = true
+precision = 2
+
 [tool.poetry]
 name = "django-user-email"
 version = "0.2.1"
@@ -55,6 +78,7 @@ factory-boy = "^3.2.0"
 black = "^21.9b0"
 flake8 = "^3.9.2"
 isort = "^5.9.3"
+coverage = "^5.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

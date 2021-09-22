@@ -58,4 +58,6 @@ jobs:
       - name: Run tests
         run: |
           poetry run python makemigrations.py
-          poetry run python runtests.py
+          poetry run coverage run runtests.py
+          poetry run coverage report
+          poetry run coverage xml
