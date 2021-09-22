@@ -3,6 +3,21 @@
 </h1>
 
 <p align="center">
+  <a href="https://github.com/khasbilegt/django-user-email/">
+    <img src="https://img.shields.io/github/workflow/status/khasbilegt/django-user-email/test?label=CI&logo=github&style=for-the-badge" alt="ci status">
+  </a>
+  <a href="https://pypi.org/project/django-user-email/">
+    <img src="https://img.shields.io/pypi/v/django-user-email?style=for-the-badge" alt="pypi link">
+  </a>
+  <a>
+    <img src="https://img.shields.io/pypi/pyversions/django-user-email?logo=python&style=for-the-badge" alt="supported python versions">
+  </a>
+  <a>
+    <img src="https://img.shields.io/pypi/djversions/django-user-email?logo=django&style=for-the-badge" alt="supported django versions">
+  </a>
+</p>
+
+<p align="center">
   <a href="#installation">Installation</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>

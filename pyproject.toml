@@ -14,7 +14,7 @@ skip_glob = "*/migrations/*.py"
 
 [tool.poetry]
 name = "django-user-email"
-version = "0.2.0"
+version = "0.2.1"
 description = "Custom, simple Django User model with email as username"
 authors = ["Khasbilegt.TS <khasbilegt.ts@gmail.com>"]
 license = "MIT"
@@ -22,6 +22,22 @@ homepage = "https://github.com/khasbilegt/django-user-email"
 repository = "https://github.com/khasbilegt/django-user-email"
 keywords = ["django", "model", "user", "email", "username", "custom"]
 readme = "README.md"
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    
+]
 packages = [
     { include = "user_email"},
 ]
