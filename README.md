@@ -31,25 +31,35 @@
 
 ## Installation
 
-1. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install numiner.
+1. Use your preferred package manager ([pip](https://pip.pypa.io/en/stable/), [poetry](https://pypi.org/project/poetry/), [pipenv](https://pypi.org/project/pipenv/)) to install the package. For example:
 
 ```bash
-$ pip install django-user-email
+$ poetry install django-user-email
 ```
 
-2. Register the app to your settings
+2. Then register 'user_email', in the 'INSTALLED_APPS' section of your project's settings.
 
 ```python
+# settings.py
+...
+
 INSTALLED_APPS = (
     ...
     'user_email',
 )
+
+...
 ```
 
-3. Since it's a custom User model Django needs to know the path of the model
+3. Set AUTH_USER_MODEL - Since it's a custom User model Django needs to know the path of the model
 
 ```bash
+# settings.py
+...
+
 AUTH_USER_MODEL = 'user_email.User'
+
+...
 ```
 
 ## Contributing
