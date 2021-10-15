@@ -34,7 +34,7 @@
 1. Use your preferred package manager ([pip](https://pip.pypa.io/en/stable/), [poetry](https://pypi.org/project/poetry/), [pipenv](https://pypi.org/project/pipenv/)) to install the package. For example:
 
 ```bash
-$ poetry install django-user-email
+$ poetry add django-user-email
 ```
 
 2. Then register 'user_email', in the 'INSTALLED_APPS' section of your project's settings.
