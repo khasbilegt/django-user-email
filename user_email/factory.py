@@ -8,5 +8,5 @@ class UserFactory(factory.django.DjangoModelFactory):
         model = User
 
     name = factory.Faker("name")
-    email = factory.Faker("email")
+    email = factory.Sequence(lambda n: f"person_{n}@email.com")
     is_active = True
