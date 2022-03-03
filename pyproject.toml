@@ -74,9 +74,9 @@ python = "^3.6.2"
 
 [tool.poetry.dev-dependencies]
 factory-boy = "^3.2.0"
-black = "^21.9b0"
-flake8 = "^3.9.2"
-isort = "^5.9.3"
+black = "^22.1.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
 coverage = {extras = ["toml"], version = "^5.5"}
 nox = "^2021.6.12"
 
