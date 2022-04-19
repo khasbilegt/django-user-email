@@ -11,7 +11,7 @@ class UserAdmin(BaseUserAdmin):
     add_form = UserCreationForm
 
     date_hierarchy = "date_joined"
-    list_display = ("name", "email", "date_joined", "is_active", "is_staff", "is_superuser")
+    list_display = ("email", "name", "date_joined", "is_active", "is_staff", "is_superuser")
     list_filter = ("is_active", "is_staff", "is_superuser", "date_joined", "groups")
     fieldsets = (
         (None, {"fields": ("name", "email", "password")}),
