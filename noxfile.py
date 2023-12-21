@@ -15,7 +15,6 @@ def test(session, django):
             )
         else:
             session.run("pip", "install", f"django=={django}")
-        session.run("python", "install")
         session.run("python", "makemigrations.py")
         session.run("coverage", "run", "runtests.py")
         session.run("coverage", "report")
