@@ -7,46 +7,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: '3.10'
 
       - name: Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@v1.3.4
         with:
+          version: 1.7.1
           virtualenvs-create: true
 
-      - run: poetry add black flake8 isort
+      - run: poetry add ruff
       - name: lint
         run: |
-          poetry run flake8 .
-          poetry run black . --check
-          poetry run isort .
+          poetry run ruff .
+          poetry run ruff format .
   test:
     strategy:
       fail-fast: true
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9"]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Poetry
-        uses: snok/install-poetry@v1
+        uses: snok/install-poetry@v1.3.4
         with:
           virtualenvs-create: true
 
       - name: Cache virtualenv
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .venv

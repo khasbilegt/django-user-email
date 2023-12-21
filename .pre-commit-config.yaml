@@ -1,26 +1,7 @@
 exclude: migrations
 repos:
-  - repo: local
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.8
     hooks:
-      - id: black
-        name: black
-        stages: [commit]
-        language: system
-        entry: poetry run black
-        types: [python]
-        args: [--config=pyproject.toml]
-
-      - id: isort
-        name: isort
-        stages: [commit]
-        language: system
-        entry: poetry run isort
-        types: [python]
-        args: [-sp=pyproject.toml]
-
-      - id: flake8
-        name: flake8
-        stages: [commit]
-        language: system
-        entry: poetry run flake8
-        types: [python]
+      - id: ruff
+      - id: ruff-format

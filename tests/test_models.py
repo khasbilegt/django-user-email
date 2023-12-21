@@ -11,9 +11,15 @@ class UserManagerTestCase(TransactionTestCase):
     def test_create_user(self):
         for case in (None, False, True):
             with self.subTest(case=case):
-                extra_fields = {"is_active": case, "is_staff": case, "is_superuser": case} if type(case) is bool else {}
+                extra_fields = (
+                    {"is_active": case, "is_staff": case, "is_superuser": case}
+                    if isinstance(case, bool)
+                    else {}
+                )
                 instance = UserFactory.build(**extra_fields)
-                user = User.objects.create_user(instance.name, instance.email, "password", **extra_fields)
+                user = User.objects.create_user(
+                    instance.name, instance.email, "password", **extra_fields
+                )
 
                 self.assertEqual(user.name, instance.name)
                 self.assertEqual(user.email, instance.email)
@@ -23,10 +29,17 @@ class UserManagerTestCase(TransactionTestCase):
     def test_create_superuser(self):
         for case in (None, True):
             with self.subTest(case=case):
-                extra_fields = {"is_active": True, "is_staff": True, "is_superuser": True}
+                extra_fields = {
+                    "is_active": True,
+                    "is_staff": True,
+                    "is_superuser": True,
+                }
                 instance = UserFactory.build(**extra_fields)
                 user = User.objects.create_superuser(
-                    instance.name, instance.email, "password", **extra_fields if case else {}
+                    instance.name,
+                    instance.email,
+                    "password",
+                    **extra_fields if case else {},
                 )
 
                 self.assertEqual(user.name, instance.name)
@@ -45,7 +58,10 @@ class UserManagerTestCase(TransactionTestCase):
                         f.name(),
                         f.email(),
                         "password",
-                        **{_field: False if field == _field else True for _field in self.fields},
+                        **{
+                            _field: False if field == _field else True
+                            for _field in self.fields
+                        },
                     ),
                     f"Superuser must have {field}=True.",
                 )
@@ -54,4 +70,9 @@ class UserManagerTestCase(TransactionTestCase):
         user = UserFactory()
 
         with self.assertRaises(IntegrityError):
-            User.objects.create_user(user.name, user.email, "password", **{field: True for field in self.fields})
+            User.objects.create_user(
+                user.name,
+                user.email,
+                "password",
+                **{field: True for field in self.fields},
+            )

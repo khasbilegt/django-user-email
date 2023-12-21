@@ -13,7 +13,9 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def _create_user(self, name, email, password, **extra_fields):
-        user = self.model(email=email and self.normalize_email(email), name=name, **extra_fields)
+        user = self.model(
+            email=email and self.normalize_email(email), name=name, **extra_fields
+        )
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -54,7 +56,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(name="unique_active_email", fields=["email"], condition=models.Q(is_active=True)),
+            models.UniqueConstraint(
+                name="unique_active_email",
+                fields=["email"],
+                condition=models.Q(is_active=True),
+            ),
         ]
 
     def __str__(self):
