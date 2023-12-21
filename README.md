@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/khasbilegt/django-user-email/">
-    <img src="https://img.shields.io/github/workflow/status/khasbilegt/django-user-email/test?label=CI&logo=github&style=for-the-badge" alt="ci status">
+    <img src="https://img.shields.io/github/actions/workflow/status/khasbilegt/django-user-email/ci.yml?label=CI&logo=github&style=for-the-badge" alt="ci status">
   </a>
   <a href="https://pypi.org/project/django-user-email/">
     <img src="https://img.shields.io/pypi/v/django-user-email?style=for-the-badge" alt="pypi link">
