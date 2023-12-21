@@ -4,7 +4,7 @@ import nox
 
 
 @nox.session
-@nox.parametrize("django", ["2.2", "3.1", "3.2", "main"])
+@nox.parametrize("django", ["3.2", "4.0", "4.2", "5.0", "main"])
 def test(session, django):
     if django == "main" and not sys.version_info.minor >= 8:
         session.skip()
