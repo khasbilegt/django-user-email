@@ -23,6 +23,7 @@ jobs:
       - run: Ruff checks
       - name: lint
         run: |
+          poetry install
           poetry run ruff check .
           poetry run ruff format .
   test:
