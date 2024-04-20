@@ -20,10 +20,12 @@ jobs:
           version: 1.7.1
           virtualenvs-create: true
 
-      - run: poetry add ruff
-      - name: lint
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Ruff checks
         run: |
-          poetry run ruff .
+          poetry run ruff check .
           poetry run ruff format .
   test:
     strategy:
